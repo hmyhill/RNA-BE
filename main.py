@@ -1,4 +1,5 @@
 import flask
+import requests
 from flask import app, request, Flask
 from newsdataapi import NewsDataApiClient
 
