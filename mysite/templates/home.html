@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block contents %}
+{% if user.is_staff %}
+    <p>Hello Admin</p>
+    <p><a href="{% url 'admin:index' %}">Admin Page</a></p>
+    <p><a href="{% url 'articles' %}">View Articles</a></p>
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+    <p><a href="{% url 'delete-user' %}">Delete User</a></p>
+{% elif user.is_authenticated %}
+    Hi {{ user.username }}!
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+    <p><a href="{% url 'password_change' %}">Change Password</a></p>
+    <p><a href="{% url 'articles' %}">View Articles</a></p>
+    <p><a href="{% url 'delete-user' %}">Delete User</a></p>
+{% else %}
+<p>You are not logged in</p>
+<a href="{% url 'login' %}">Log In</a>
+<a href="{% url 'signup' %}">Sign Up</a>
+{% endif %}
+{% endblock %}

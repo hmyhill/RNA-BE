@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-black"> Welcome to Rich News Aggregator </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div>
+    <form action="{% url 'search-articles' %}" method="get">
+        {% csrf_token %}
+        <input type="text" name="q" placeholder="Search Articles">
+        <button type="submit">Search</button>
+    </form>
+    <label for="tags">Tags:</label>
+    <form action="{% url 'search-tags' %}" method="get">
+        <select name="tags" id="tags">
+            <option value="0">---</option>
+            <option value="1">Entertainment</option>
+            <option value="2">Sport</option>
+            <option value="3">Technology</option>
+            <option value="4">World</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+</div>
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
+            {% for post in post_list %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                    <p class="card-text">{{post.content|slice:":200" }}</p>
+                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{%endblock%}
