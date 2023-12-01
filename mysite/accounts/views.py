@@ -1,5 +1,7 @@
 from django.contrib.auth import login as auth_login
 from django.shortcuts import redirect, render
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 from .forms import SignUpForm
 
@@ -14,3 +16,9 @@ def signup(request):
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
+@login_required
+def del_user(request):
+    user = request.user
+    user.delete()
+    return redirect("home")
