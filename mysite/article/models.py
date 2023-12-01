@@ -11,7 +11,9 @@ STATUS = (
 TAGS = (
     (0, "---"),
     (1, "Entertainment"),
-    (2, "Sport")
+    (2, "Sport"),
+    (3, "Technology"),
+    (4, "World")
     )
 
 #Setting the database models to store article data
