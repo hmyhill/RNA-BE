@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64c0fd53-b1ef-45c6-88cc-8b8219fcae3c" name="Changes" comment="Added actions" />
+    <list default="true" id="64c0fd53-b1ef-45c6-88cc-8b8219fcae3c" name="Changes" comment="Adjusted API">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,10 +34,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="api" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -81,7 +85,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "api",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/henry/IdeaProjects/RNA-BE/venv",
     "node.js.detected.package.eslint": "true",
@@ -147,8 +151,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.manage" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.manage" />
         <item itemvalue="Python.manage" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.manage" />
@@ -174,7 +178,7 @@
       <workItem from="1701482073295" duration="2616000" />
       <workItem from="1701705851714" duration="1430000" />
       <workItem from="1701773411720" duration="1043000" />
-      <workItem from="1701782822066" duration="69000" />
+      <workItem from="1701782822066" duration="1563000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup">
       <option name="closed" value="true" />
@@ -224,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701231424354</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Adjusted API">
+      <option name="closed" value="true" />
+      <created>1701782945147</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701782945147</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,11 +258,12 @@
     <MESSAGE value="Initial API setup" />
     <MESSAGE value="Initial Admin setup" />
     <MESSAGE value="Added actions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added actions" />
+    <MESSAGE value="Adjusted API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjusted API" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RNA_BE$settings.coverage" NAME="settings Coverage Results" MODIFIED="1699307227847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rna/rna" />
     <SUITE FILE_PATH="coverage/RNA_BE$manage.coverage" NAME="manage Coverage Results" MODIFIED="1701229747609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rna" />
-    <SUITE FILE_PATH="coverage/RNA_BE$main.coverage" NAME="main Coverage Results" MODIFIED="1701781880580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RNA_BE$main.coverage" NAME="main Coverage Results" MODIFIED="1701783363949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
