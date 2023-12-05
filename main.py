@@ -60,7 +60,7 @@ def user_create():
 
 
 @app.route('/user/login', methods=['GET'])
-def user():
+def user_login():
     if request.method == 'GET':
         email = request.form['email']
         password = request.form['password']
@@ -73,7 +73,7 @@ def user():
 
 
 @app.route('/user', methods=['GET'])
-def user_login():
+def user():
     if request.method == 'GET':
         userID = request.form['userID']
         name = request.form['name']
