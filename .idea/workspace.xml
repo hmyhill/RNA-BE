@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64c0fd53-b1ef-45c6-88cc-8b8219fcae3c" name="Changes" comment="Initial Admin setup">
+    <list default="true" id="64c0fd53-b1ef-45c6-88cc-8b8219fcae3c" name="Changes" comment="Added actions">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +18,17 @@
       <list>
         <option value="Python Script" />
       </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
     </option>
   </component>
   <component name="Git.Settings">
@@ -153,7 +165,11 @@
       <workItem from="1699305448022" duration="360000" />
       <workItem from="1699305815409" duration="890000" />
       <workItem from="1699306727964" duration="808000" />
-      <workItem from="1701229147504" duration="2021000" />
+      <workItem from="1701229147504" duration="2737000" />
+      <workItem from="1701481847368" duration="207000" />
+      <workItem from="1701482073295" duration="2616000" />
+      <workItem from="1701705851714" duration="1430000" />
+      <workItem from="1701773411720" duration="1043000" />
     </task>
     <task id="LOCAL-00001" summary="Initial setup">
       <option name="closed" value="true" />
@@ -195,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701230884628</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added actions">
+      <option name="closed" value="true" />
+      <created>1701231424354</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701231424354</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,11 +240,12 @@
     <MESSAGE value="Initial setup" />
     <MESSAGE value="Initial API setup" />
     <MESSAGE value="Initial Admin setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Admin setup" />
+    <MESSAGE value="Added actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added actions" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RNA_BE$settings.coverage" NAME="settings Coverage Results" MODIFIED="1699307227847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rna/rna" />
     <SUITE FILE_PATH="coverage/RNA_BE$manage.coverage" NAME="manage Coverage Results" MODIFIED="1701229747609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/rna" />
-    <SUITE FILE_PATH="coverage/RNA_BE$main.coverage" NAME="main Coverage Results" MODIFIED="1701230958053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RNA_BE$main.coverage" NAME="main Coverage Results" MODIFIED="1701774454498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
