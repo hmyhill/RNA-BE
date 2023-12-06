@@ -1,10 +1,14 @@
 from flask import request, Flask, jsonify
 from newsdataapi import NewsDataApiClient
 
+from flask_cors import CORS, cross_origin
+
 # Initialises the API key
 api = NewsDataApiClient(apikey='pub_317102f7a1f35b5bb1aad1bc348030fc41397')
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route('/news/top', methods=['GET'])
