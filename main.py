@@ -1,7 +1,6 @@
 from flask import request, Flask, jsonify
 from newsdataapi import NewsDataApiClient
-
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 
 # Initialises the API key
 api = NewsDataApiClient(apikey='pub_317102f7a1f35b5bb1aad1bc348030fc41397')
@@ -13,35 +12,34 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/news/top', methods=['GET'])
 def top_news():
-    response = api.news_api(country='gb', language='en', domain='bbc', full_content=True, max_result=13)
+    response = api.news_api(country='gb', language='en', domain='BBC, Independent, Metro', image=True,
+                            full_content=True, max_result=13)
     return response
 
 
 @app.route('/news/tech', methods=['GET'])
 def tech_news():
-    response = api.news_api(country='gb', language='en', domain='bbc', full_content=True, max_result=13,
-                            category='technology')
+    response = api.news_api(country='gb', language='en', image=True, full_content=True, category="technology")
     return response
 
 
 @app.route('/news/sport', methods=['GET'])
 def sport_news():
-    response = api.news_api(country='gb', language='en', domain='bbc', full_content=True, max_result=13,
-                            category='sports')
+    response = api.news_api(country='gb', language='en', domain='BBC, Independent, Metro', image=True,
+                            full_content=True, max_result=13, category='sports')
     return response
 
 
 @app.route('/news/entertainment', methods=['GET'])
 def entertainment_news():
-    response = api.news_api(country='gb', language='en', domain='bbc', full_content=True, max_result=13,
-                            category='entertainment')
+    response = api.news_api(country='gb', language='en', domain='BBC, Independent, Metro', image=True,
+                            full_content=True, max_result=13, category='entertainment')
     return response
 
 
 @app.route('/news/world', methods=['GET'])
 def world_news():
-    response = api.news_api(country='gb', language='en', domain='bbc', full_content=True, max_result=13,
-                            category='world')
+    response = api.news_api(country='gb', language='en', image=True, full_content=True, max_result=13, category='world')
     return response
 
 
