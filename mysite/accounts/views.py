@@ -1,4 +1,6 @@
+import json
 from django.contrib.auth import login as auth_login
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -13,6 +15,10 @@ def signup(request):
             user = form.save()
             auth_login(request, user)
             return redirect('home')
+        if request.user.is_authenticated:
+            return HttpResponse(json.dumps({
+                "is_authenticated": request.user.is_authenticated()
+            }), content_type='application/json')
     else:
         form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
