@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-tfoere4$-44*jj+77o)*sk2q3)c5r=hu#14um@=ipkr&q-!d@y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost"]
 
 
 # Application definition
@@ -40,13 +40,16 @@ INSTALLED_APPS = [
     'article',
     'widget_tweaks',
     'accounts',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
+      'mysite.middle.DisableCSRFMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -129,3 +132,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 LOGIN_URL = 'login'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000"
+]
+
+CORS_ALLOW_HEADERS = ["withCredentials"]
+
+CORS_ALLOW_CREDENTIALS = True
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
+
+
