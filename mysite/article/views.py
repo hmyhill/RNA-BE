@@ -1,9 +1,7 @@
 #Importing modules to configure the views
-from django.shortcuts import render
 from .models import Post
 from django.views import generic
-from django.shortcuts import render, redirect
-import json
+from django.http import JsonResponse
 
 TAGS = (
     (0, "---"),
@@ -12,6 +10,7 @@ TAGS = (
     (3, "Technology"),
     (4, "World")
     )
+
 
 def return_news_articles(request):
     print(Post.objects)

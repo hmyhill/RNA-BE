@@ -4,6 +4,7 @@ from django.urls import path, include
 from django.views.generic.base import TemplateView
 from accounts import views as accounts_views
 from django.contrib.auth import views as auth_views
+from article import views as article_views
 
 app_name = "main"   
 
