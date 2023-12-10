@@ -13,7 +13,6 @@ TAGS = (
 
 
 def return_news_articles(request):
-    print(Post.objects)
     if request.method == "GET":
         try:
             arr = []
