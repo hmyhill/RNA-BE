@@ -18,7 +18,11 @@ def signup(request):
         if request.user.is_authenticated:
             return HttpResponse(json.dumps({
                 "is_authenticated": request.user.is_authenticated,
-                "is_admin": request.user.is_staff
+                "is_admin": request.user.is_staff,
+                "username": request.user.username,
+                "email": request.user.email,
+                "first_name": request.user.first_name,
+                "last_name": request.user.last_name
             }), content_type='application/json')
     else:
         form = SignUpForm()
