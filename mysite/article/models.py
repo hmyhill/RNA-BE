@@ -11,7 +11,7 @@ TAGS = (
     (4, "World")
     )
 
-#Setting the database models to store article data
+#Setting the database models to store article data, details are refined to match those which are available on FE
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     content = models.TextField(default="")

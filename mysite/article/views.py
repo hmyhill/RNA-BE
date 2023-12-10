@@ -18,6 +18,7 @@ def return_news_articles(request):
             arr = []
             for story in Post.objects.values():
                 categoryName = TAGS[story['category']][1]
+                #Return the data to the FE in the same structure as provided by the news api for external stories
                 arr.append({ 'title': categoryName + ": " + story['title'], 'content': story['content'],'image_url': story['imageURl'] })
             return JsonResponse({"results": arr})
         except Exception as e:
