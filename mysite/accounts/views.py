@@ -39,6 +39,7 @@ def change_user_permissions(request):
                     print("UPDATING")
                     updatedUser = User.objects.get(username=request.POST['username'])
                     updatedUser.is_staff = request.POST['is_admin'].lower() == 'true'
+                    updatedUser.is_superuser = request.POST['is_admin'].lower() == 'true'
                     updatedUser.save()
                     return HttpResponse(json.dumps(request.POST))
     raise RuntimeError("An Invalid Request Was Sent")
