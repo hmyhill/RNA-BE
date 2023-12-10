@@ -18,7 +18,8 @@ def return_news_articles(request):
         try:
             arr = []
             for story in Post.objects.values():
-                arr.append({ 'title': story['title'], 'content': story['content'], 'category': TAGS[story['category']][1], 'image_url': story['imageURl'] })
+                categoryName = TAGS[story['category']][1]
+                arr.append({ 'title': categoryName + ": " + story['title'], 'content': story['content'],'image_url': story['imageURl'] })
             return JsonResponse({"results": arr})
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=400)
