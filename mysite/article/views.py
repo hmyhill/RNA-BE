@@ -30,7 +30,7 @@ def return_news_articles(request):
 class PostList(generic.ListView):
     model = Post
     template_name = 'index.html'
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    queryset = Post.objects.all().order_by('title')
 
 #Setting the view of the article once user clicks on it
 class PostDetail(generic.DetailView):
@@ -43,12 +43,12 @@ class BlogSearchView(generic.ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        return Post.objects.filter(title__icontains=query).order_by('-created_on')
+        return Post.objects.filter(title__icontains=query).order_by('title')
 
 class BlogTagView(generic.ListView):
     model = Post
     template_name = "index.html"
 
     def get_queryset(self):
-        query = self.request.GET.get('tags')
-        return Post.objects.filter(tags__icontains=query).order_by('-created_on')
+        query = self.request.GET.get('category')
+        return Post.objects.filter(category__icontains=query).order_by('title')
