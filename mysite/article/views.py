@@ -17,10 +17,9 @@ def return_news_articles(request):
     if request.method == "GET":
         try:
             arr = []
-            for x in Post.objects.values_list():
-                print(x)
-                arr.append({ 'title': x[1], 'content': x[2], 'tags': TAGS[x[7]][1] })
-            return JsonResponse({"articles": arr})
+            for story in Post.objects.values():
+                arr.append({ 'title': story['title'], 'content': story['content'], 'category': TAGS[story['category']][1], 'image_url': story['imageURl'] })
+            return JsonResponse({"results": arr})
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=400)
 
