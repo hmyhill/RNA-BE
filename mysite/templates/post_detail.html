@@ -1,11 +1,16 @@
+<!-- HTML page inserted into the base.html content section -->
 {% extends 'base.html' %} {% block content %}
 
+<!-- Creates the card for the articles full details to be displayed -->
 <div class="container">
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 left  top">
             <div class="card-body">
+                <!-- Fetches the title from the database -->
                 <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+                <!-- Fetches the author and created date from the database -->
                 <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
+                <!-- Fetches the content from the database -->
                 <p class="card-text ">{{ object.content | safe }}</p>
             </div>
         </div>

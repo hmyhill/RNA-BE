@@ -134,7 +134,8 @@ LOGOUT_REDIRECT_URL = "home"
 LOGIN_URL = 'login'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "http://localhost:8000"
 ]
 
 CORS_ALLOW_HEADERS = ["withCredentials"]

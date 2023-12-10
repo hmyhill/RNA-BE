@@ -11,6 +11,7 @@ def field_type(bound_field):
 @register.filter
 def input_class(bound_field):
     css_class = ''
+    #Checking the form for errors
     if bound_field.form.is_bound:
         if bound_field.errors:
             css_class = 'is-invalid'

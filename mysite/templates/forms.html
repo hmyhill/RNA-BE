@@ -1,5 +1,6 @@
 {% load form_tags widget_tweaks %}
 
+<!-- Validate data input into the form and display error if incorrect-->
 {% if form.non_field_errors %}
 <div class="alert alert-danger" role="alert">
     {% for error in form.non_field_errors %}
@@ -9,15 +10,19 @@
 </div>
 {% endif %}
 
+<!-- Creates for each field in the form -->
 {% for field in form %}
+<!-- Creates the label for the field -->
 <div class="form-group">
     {{ field.label_tag }}
     {% render_field field class=field|input_class %}
+    <!-- Check if there are errors within the input and display error if incorrect -->
     {% for error in field.errors %}
     <div class="invalid-feedback">
         {{ error }}
     </div>
     {% endfor %}
+    <!-- Display the tooltip for the field -->
     {% if field.help_text %}
     <small class="form-text text-muted">
         {{ field.help_text|safe }}

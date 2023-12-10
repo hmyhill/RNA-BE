@@ -1,9 +1,12 @@
+<!-- HTML block inserted into the base.html page -->
 {% extends "base.html" %}
 
 {% block title %}Login{% endblock %}
 
 {% block contents %}
+<!-- Give the header of the login page -->
 <h2>Log In</h2>
+<!-- Lays out the login card on the page with a form with a submit button to send the form -->
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
