@@ -13,6 +13,7 @@ urlpatterns = [
     path('api/admin/', admin.site.urls, name='admin_Page'),
     path('api/articles/', include('article.urls')),
     path("api/accounts/", include("django.contrib.auth.urls")),
+    path("api/accounts/change-user-permissions/", accounts_views.change_user_permissions, name="change_user_permissions"),
     path("api/login/", accounts_views.signup, name='signup'),
     path("api/delete-user/", accounts_views.del_user, name='delete-user'),
     path('api/return_news_articles/', article_views.return_news_articles, name='return_news_articles'),

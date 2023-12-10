@@ -29,6 +29,21 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 @login_required
+def change_user_permissions(request):
+    print("TEST")
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            if request.user.is_staff:
+                print("CHECKING USER PERMS")
+                if request.user.username != request.POST['username']:
+                    print("UPDATING")
+                    updatedUser = User.objects.get(username=request.POST['username'])
+                    updatedUser.is_staff = request.POST['is_admin'].lower() == 'true'
+                    updatedUser.save()
+                    return HttpResponse(json.dumps(request.POST))
+    raise RuntimeError("An Invalid Request Was Sent")
+
+@login_required
 def del_user(request):
     user = request.user
     user.delete()
