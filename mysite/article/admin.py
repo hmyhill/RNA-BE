@@ -4,9 +4,8 @@ from .models import Post
 
 #Setting admin view of the articles
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'status', 'created_on', 'tags')
-    list_filter = ("status",)
-    search_fields = ["title", "content", "tags"]
-    prepopulated_fields = {'slug': ('title',)}
+    list_display = ('title','content')
+    search_fields = ["title", "content"]
+
 
 admin.site.register(Post, PostAdmin)

@@ -13,14 +13,14 @@ TAGS = (
 
 
 def return_news_articles(request):
-    print(Post.objects)
     if request.method == "GET":
         try:
             arr = []
-            for x in Post.objects.values_list():
-                print(x)
-                arr.append({ 'title': x[1], 'content': x[2], 'tags': TAGS[x[7]][1] })
-            return JsonResponse({"articles": arr})
+            for story in Post.objects.values():
+                categoryName = TAGS[story['category']][1]
+                #Return the data to the FE in the same structure as provided by the news api for external stories
+                arr.append({ 'title': categoryName + ": " + story['title'], 'content': story['content'],'image_url': story['imageURl'] })
+            return JsonResponse({"results": arr})
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=400)
 
@@ -30,7 +30,7 @@ def return_news_articles(request):
 class PostList(generic.ListView):
     model = Post
     template_name = 'index.html'
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    queryset = Post.objects.all().order_by('title')
 
 #Setting the view of the article once user clicks on it
 class PostDetail(generic.DetailView):
@@ -43,12 +43,12 @@ class BlogSearchView(generic.ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        return Post.objects.filter(title__icontains=query).order_by('-created_on')
+        return Post.objects.filter(title__icontains=query).order_by('title')
 
 class BlogTagView(generic.ListView):
     model = Post
     template_name = "index.html"
 
     def get_queryset(self):
-        query = self.request.GET.get('tags')
-        return Post.objects.filter(tags__icontains=query).order_by('-created_on')
+        query = self.request.GET.get('category')
+        return Post.objects.filter(category__icontains=query).order_by('title')
