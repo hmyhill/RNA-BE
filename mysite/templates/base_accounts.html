@@ -1,12 +1,15 @@
+<!-- HTML block inserted into the base.html page -->
 {% extends 'base.html' %}
 
 {% load static %}
 
+<!-- Link to the accounts css page -->
 {% block stylesheet %}
 <link rel="stylesheet" href="{% static 'css/accounts.css' %}">
 {% endblock %}
 
 {% block body %}
+<!-- Allows user to click on logo to go back home -->
 <div class="container">
     <h1 class="text-center logo my-4">
         <a href="{% url 'home' %}">Django Boards</a>

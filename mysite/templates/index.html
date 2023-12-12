@@ -1,7 +1,9 @@
+<!-- HTML block inserted into the base.html page -->
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
 
+<!-- Creating the heading for the article view page -->
 <header class="masthead">
     <div class="overlay"></div>
     <div class="container">
@@ -15,11 +17,13 @@
     </div>
 </header>
 <div>
+    <!-- Create the user input search bar - user can input words and articles get searched to see if that word appears in title -->
     <form action="{% url 'search-articles' %}" method="get">
         {% csrf_token %}
         <input type="text" name="q" placeholder="Search Articles">
         <button type="submit">Search</button>
     </form>
+    <!-- Creates the filter dropdown for the articles to filter by tags -->
     <label for="tags">Tags:</label>
     <form action="{% url 'search-tags' %}" method="get">
         <select name="tags" id="tags">
@@ -34,14 +38,16 @@
 </div>
 <div class="container">
     <div class="row">
-        <!-- Blog Entries Column -->
+        <!-- Displays the article summaries for all articles -->
         <div class="col-md-8 mt-3 left">
             {% for post in post_list %}
             <div class="card mb-4">
                 <div class="card-body">
+                    <!-- HDisplays the title, the author, when the post was created and the first 200 characters of the content -->
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
                     <p class="card-text">{{post.content|slice:":200" }}</p>
+                    <!-- Gives button to read the whole article on a separate page -->
                     <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
             </div>

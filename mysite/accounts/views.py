@@ -56,7 +56,9 @@ def change_user_permissions(request):
     #Otherwise throw an error
     raise RuntimeError("An Invalid Request Was Sent")
 
+#Checks if the user is logged in
 @login_required
+#Deletes the current user from the database
 def del_user(request):
     user = request.user
     user.delete()

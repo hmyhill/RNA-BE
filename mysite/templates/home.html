@@ -1,22 +1,29 @@
+<!-- HTML block inserted into the base.html page -->
 {% extends "base.html" %}
 
 {% block title %}Home{% endblock %}
 
 {% block contents %}
+<!-- Checks if the user has logged in as an admin user -->
 {% if user.is_staff %}
     <p>Hello Admin</p>
+    <!-- Gives links to admin page, viewing articles, logging out and deleting their user for the user to access -->
     <p><a href="{% url 'admin:index' %}">Admin Page</a></p>
     <p><a href="{% url 'articles' %}">View Articles</a></p>
     <p><a href="{% url 'logout' %}">Log Out</a></p>
     <p><a href="{% url 'delete-user' %}">Delete User</a></p>
+<!-- Checks if the user is logged on and is regular user -->
 {% elif user.is_authenticated %}
     Hi {{ user.username }}!
+    <!-- Gives links to the logout, changing password, viewing articles and deleting their user for the user to access -->
     <p><a href="{% url 'logout' %}">Log Out</a></p>
     <p><a href="{% url 'password_change' %}">Change Password</a></p>
     <p><a href="{% url 'articles' %}">View Articles</a></p>
     <p><a href="{% url 'delete-user' %}">Delete User</a></p>
+<!-- Checks if the user is not logged in -->
 {% else %}
 <p>You are not logged in</p>
+<!-- Gives links to login and signup pages for the non signed in user -->
 <a href="{% url 'login' %}">Log In</a>
 <a href="{% url 'signup' %}">Sign Up</a>
 {% endif %}

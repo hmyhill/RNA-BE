@@ -1,4 +1,4 @@
-#Importing modules needed for the urls
+#Importing modules needed for the urls including the views for the pages the URLS are referring to
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
@@ -8,7 +8,7 @@ from article import views as article_views
 
 app_name = "main"   
 
-#Setting paths for the urls
+#Setting paths for the urls - creates the paths that can be referred to in other pages
 urlpatterns = [
     path('api/admin/', admin.site.urls, name='admin_Page'),
     path('api/articles/', include('article.urls')),
