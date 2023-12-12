@@ -19,6 +19,9 @@ def return_news_articles(request):
         try:
             arr = []
             #Loops through all of the created articles in the database
+    if request.method == "GET":
+        try:
+            arr = []
             for story in Post.objects.values():
                 categoryName = TAGS[story['category']][1]
                 #Return the data to the FE in the same structure as provided by the news api for external stories
